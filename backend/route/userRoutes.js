@@ -1,11 +1,8 @@
 import express from "express";
+import { users } from "../controllers/userController.js"; 
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-   res.json({
-        message: "Hola"
-   })
-});
+router.get("/", users);
 
 export default router;
