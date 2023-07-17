@@ -1,8 +1,6 @@
 
-const users = (req, res) => {
-    res.json({
-        message: "Alicia"
-    })
+const signUp = (req, res) => {
+
 }
 
-export { users}
+export { signUp }
