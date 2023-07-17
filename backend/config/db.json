@@ -1,3 +1,31 @@
 {
-  "posts": []
+  "users": [
+    {
+      "id": 1689576305911,
+      "firstname": "Alice",
+      "lastname": "Humphrys",
+      "email": "alicehumphrys@gmail.com",
+      "password": "pipo2007",
+      "age": 23,
+      "country": "UK"
+    },
+    {
+      "id": 1689576323081,
+      "firstname": "Alice",
+      "lastname": "Humphrys",
+      "email": "alicehumphrys@gmail.com",
+      "password": "pipo2007",
+      "age": 23,
+      "country": "UK"
+    },
+    {
+      "id": 1689576559039,
+      "firstname": "Jorge",
+      "lastname": "Meza",
+      "email": "jorberiver@gmail.com",
+      "password": "pipo2007",
+      "age": 30,
+      "country": "Mexico"
+    }
+  ]
 }

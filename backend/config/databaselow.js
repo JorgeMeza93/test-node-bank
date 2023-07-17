@@ -9,7 +9,7 @@ const _dirname = dirname(fileURLToPath(import.meta.url));
 async function createConnection(){
     const file = join(_dirname, "./db.json");
     const adapter = new JSONFile(file);
-    const defaultData = { posts: [] }
+    const defaultData = { users: [] }
     db = new Low(adapter, defaultData);
     await db.read()
     await db.write();
