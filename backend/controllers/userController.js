@@ -1,16 +1,20 @@
 import { getConnection } from "../config/databaselow.js";
+import bcrypt from "bcrypt";
 
 const signUp = async (req, res) => {
     const {firstname, lastname, email, password, age, country} = req.body;
+    let hashedPassword;
     try {
-        const existeUsuario = await getConnection().data.users.find( usr => usr.email == email);
+        const existeUsuario = await getConnection().data.users.find( usr => usr.email == email); 
+        const salt = await bcrypt.genSalt(10);
+        hashedPassword = await bcrypt.hash(password, salt);
         if(!existeUsuario){
             const user = {
                 id:  new Date().getTime(),
                 firstname: firstname,
                 lastname: lastname, 
                 email: email,
-                password: password,
+                password: hashedPassword,
                 age: age,
                 country: country
             }

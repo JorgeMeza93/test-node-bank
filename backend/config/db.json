@@ -26,6 +26,15 @@
       "password": "pipo2007",
       "age": 30,
       "country": "Mexico"
+    },
+    {
+      "id": 1689579476123,
+      "firstname": "Marco Antonio",
+      "lastname": "Cohen",
+      "email": "marcocohenr@gmail.com",
+      "password": "$2b$10$alJtL8ckrdeXCyDOYY2b6uHTeK7UawlfVCJM7/ALpe/AlyLloz.gm",
+      "age": 26,
+      "country": "Costa Rica"
     }
   ]
 }
