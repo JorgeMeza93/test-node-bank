@@ -71,4 +71,9 @@ const login = async (req, res) => {
     }
 }
 
-export { signUp, login }
+const profile = async (req, res) => {
+    console.log("Desde el perfil del usuario");
+    console.log(req.user);
+}
+
+export { signUp, login, profile }
