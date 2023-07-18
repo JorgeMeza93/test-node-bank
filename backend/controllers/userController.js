@@ -2,7 +2,7 @@ import { getConnection } from "../config/databaselow.js";
 import bcrypt from "bcrypt";
 
 const signUp = async (req, res) => {
-    const {firstname, lastname, email, password, age, country} = req.body;
+    const {firstname, lastname, email, password, accountNumber, age, country} = req.body;
     let hashedPassword;
     try {
         const existeUsuario = await getConnection().data.users.find( usr => usr.email == email); 
@@ -15,6 +15,7 @@ const signUp = async (req, res) => {
                 lastname: lastname, 
                 email: email,
                 password: hashedPassword,
+                accountNumber: accountNumber,
                 age: age,
                 country: country
             }
@@ -33,4 +34,29 @@ const signUp = async (req, res) => {
     }
 }
 
-export { signUp }
+
+const login = async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const existeUsuario = await getConnection().data.users.find( usr => usr.email == email); 
+        if(!existeUsuario){
+            const error = new Error("The user doesn't exist, please checkout");
+            return res.status(404).json({ msg: error.message });
+        }
+        else{
+            console.log(existeUsuario);
+            const unHashedPassword = await bcrypt.compare(password, existeUsuario.password)
+            if(await unHashedPassword){
+                console.log("contraseña es correcta")
+            }
+            else{
+                console.log("contraseña no es correcta");
+            }
+        }
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ msg: error.message })
+    }
+}
+
+export { signUp, login }

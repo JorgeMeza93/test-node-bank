@@ -35,6 +35,16 @@
       "password": "$2b$10$alJtL8ckrdeXCyDOYY2b6uHTeK7UawlfVCJM7/ALpe/AlyLloz.gm",
       "age": 26,
       "country": "Costa Rica"
+    },
+    {
+      "id": 1689650940413,
+      "firstname": "David",
+      "lastname": "Sachs",
+      "email": "pipovandervaart@gmail.com",
+      "password": "$2b$10$FvOja7zkRVXcEEDbehc61O5TedsYAyXA8uTZKH435cRWw8Uw3MWQG",
+      "accountNumber": "0001-3456-1234",
+      "age": 40,
+      "country": "US"
     }
   ]
 }
