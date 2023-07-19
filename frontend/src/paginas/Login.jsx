@@ -17,6 +17,18 @@ const Login = () => {
       setAlerta({ msg: "All the fields are required!", error: true })
       return;
     }
+    try {
+      const { data } = await axios.post("http://localhost:4000/api/users/login", { email, password})
+      setAlerta("{}")
+      localStorage.setItem("data", data.token);
+      console.log(data.token);
+    } catch (error) {
+      console.log(error);
+      setAlerta({
+        msg: error.response.data.msg,
+        error: true
+      })
+    }
   }
 
   const { msg } = alerta;
