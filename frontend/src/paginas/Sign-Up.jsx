@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Alerta from '../components/Alerta';
 
 const SignUp = () => {
 
@@ -11,11 +12,47 @@ const SignUp = () => {
     const [country, setCountry] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [repPassword, setRepPassword] = useState("");
+    const [alerta, setAlerta] = useState({})
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if([firstname, lastname, email, accountNumber, age, country, email, password].includes("")){
+            setAlerta({
+                msg: "All the fields are required!",
+                error: true
+            })
+            return
+        }
+        if( password !== repPassword ){
+            setAlerta({
+                msg: "Password and repeat password are not the same",
+                error: true
+            })
+            return
+        }
+        if( password.length < 8){
+            setAlerta({
+                msg: "Password must have at least s8 characters"
+            })
+            return
+        }
+        try {
+            
+        } catch (error) {
+            console.log(error);
+        }
+        setAlerta({});
+    }
+
+    const { msg } = alerta;
 
     return (
             <div>
             <img src='logo.png' className='w-1/5 block mx-auto'/>
             <h1 className='text-sky-500 mt-5 text-center font-black text-xl'>Create an account in Online Banking</h1>
+            { msg && <Alerta alerta={alerta} /> }
+
             <form className='my-10 bg-white shadow rounded-lg px-10 py-10' onSubmit={handleSubmit}>
                 <div className='my-5'>
                     <label className='text-gray-600 block text-lg' htmlFor='firstname'>First name</label>
@@ -44,6 +81,10 @@ const SignUp = () => {
                 <div className='my-5'>
                     <label className='text-gray-600 block text-lg' htmlFor='password'>Password</label>
                     <input id="password" name='password' type='password' className='w-full mt-2 p-2 border rounded-xl bg-gray-50' value={password} onChange={e => setPassword(e.target.value)}></input>
+                </div>
+                <div className='my-5'>
+                    <label className='text-gray-600 block text-lg' htmlFor='repPassword'>Repeat Password</label>
+                    <input id="repPassword" name='repPassword' type='password' className='w-full mt-2 p-2 border rounded-xl bg-gray-50' value={repPassword} onChange={e => setRepPassword(e.target.value)}></input>
                 </div>
                 <input type='submit' value="Sign Up" className='bg-gray-300 text-black w-2/3 block mx-auto font-bold text-xl rounded-xl py-3 mt-14 uppercase mb-5' />
             </form>
