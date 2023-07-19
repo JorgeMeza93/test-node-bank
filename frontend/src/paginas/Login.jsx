@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -18,7 +18,7 @@ const Login = () => {
         <input type='submit' value="Login" className='bg-gray-300 text-black w-2/3 block mx-auto font-bold text-xl rounded-xl py-3 mt-14 uppercase mb-5' />
       </form>
       <nav className='lg:flex lg:justify-between'>
-
+        <Link className='block text-center my-5 text-slate-500 uppercase text-sm' to="signup" >Don't have an account? Sign up</Link>
       </nav>
     </div>
   )
