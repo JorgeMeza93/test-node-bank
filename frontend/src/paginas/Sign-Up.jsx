@@ -39,7 +39,7 @@ const SignUp = () => {
             return
         }
         try {
-            const respuesta = await axios.post("http://localhost:4000/api/users", {
+            const { data } = await axios.post("http://localhost:4000/api/users", {
                 firstname,
                 lastname,
                 accountNumber,
@@ -48,10 +48,14 @@ const SignUp = () => {
                 email,
                 password
             });
+            setAlerta({
+                msg:data.msg,
+                error: false
+            })
         } catch (error) {
-            console.log(error);
+            console.log(error.response);
+            setAlerta({msg: error.response.data.msg, error: true})
         }
-        setAlerta({});
     }
 
     const { msg } = alerta;

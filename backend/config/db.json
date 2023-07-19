@@ -45,6 +45,28 @@
       "accountNumber": "0001-3456-1234",
       "age": 40,
       "country": "US"
+    },
+    {
+      "id": 1689792059558,
+      "firstname": "Mateo",
+      "lastname": "Kovacic",
+      "email": "metokovacic@gmail.com",
+      "password": "$2b$10$1/wW9skf5jr/9i9P8RBfMu/U8XhVEc7BK34WezMYS5jr6cMfizvZG",
+      "accountNumber": "000100061234",
+      "age": "27",
+      "country": "Bulgaria",
+      "balance": 0
+    },
+    {
+      "id": 1689793950555,
+      "firstname": "Mariane",
+      "lastname": "López",
+      "email": "marianelopez@gmail.com",
+      "password": "$2b$10$Xn7uejmmzPh666sM3w.1MOA2zFg4GZM7GTm7ijGPU.I.eq7H.D7t.",
+      "accountNumber": "000100074321",
+      "age": "19",
+      "country": "Colombia",
+      "balance": 0
     }
   ]
 }

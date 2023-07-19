@@ -24,7 +24,7 @@ const signUp = async (req, res) => {
             const db = await getConnection();
             db.data.users.push(user);
             await db.write();
-            res.json(user)
+            res.json({user, msg: "The user was successfully created"})
         }
         else{
             const error = new Error("User already registered");
