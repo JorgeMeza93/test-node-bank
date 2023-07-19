@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Alerta from '../components/Alerta';
+import axios from "axios"
 
 const SignUp = () => {
 
@@ -15,7 +16,7 @@ const SignUp = () => {
     const [repPassword, setRepPassword] = useState("");
     const [alerta, setAlerta] = useState({})
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if([firstname, lastname, email, accountNumber, age, country, email, password].includes("")){
             setAlerta({
@@ -38,7 +39,15 @@ const SignUp = () => {
             return
         }
         try {
-            
+            const respuesta = await axios.post("http://localhost:4000/api/users", {
+                firstname,
+                lastname,
+                accountNumber,
+                age,
+                country,
+                email,
+                password
+            });
         } catch (error) {
             console.log(error);
         }
