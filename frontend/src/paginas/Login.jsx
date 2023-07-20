@@ -15,7 +15,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("pipo");
     if([email, password].includes("")){
       setAlerta({ msg: "All the fields are required!", error: true })
       return;
@@ -26,11 +25,11 @@ const Login = () => {
       localStorage.setItem("data", data.token);
       setAuth(data);
     } catch (error) {
-      console.log(error);
-      setAlerta({
-        msg: error.response.data.msg,
-        error: true
-      })
+        console.log(error);
+        setAlerta({
+          msg: error.response.data.msg,
+          error: true
+        })
     }
   }
 

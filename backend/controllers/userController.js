@@ -72,8 +72,9 @@ const login = async (req, res) => {
 }
 
 const profile = async (req, res) => {
+    const { user } = req;
     console.log("Desde el perfil del usuario");
-    console.log(req.user);
+    return res.json(user)
 }
 
 export { signUp, login, profile }
