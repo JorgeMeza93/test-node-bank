@@ -14,8 +14,10 @@ function App() {
               <Route index element={<Login/> }/>
               <Route path="signup" element={<SignUp/>} />
           </Route>
-          <Route>
 
+          <Route path="/user" element={<RutaProtegida />}>
+            <Route index element={<Usuario />} ></Route>
+            
           </Route>
         </Routes>
       </AuthProvider>
