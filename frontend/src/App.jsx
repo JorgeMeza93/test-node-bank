@@ -3,6 +3,8 @@ import AuthLayout from "./layouts/AuthLayout";
 import Login from "./paginas/Login";
 import SignUp from "./paginas/Sign-Up";
 import { AuthProvider } from "./context/AuthProvider"
+import RutaProtegida from "./layouts/RutaProtegida";
+import Usuario from "./paginas/Usuario";
 
 function App() {
 
