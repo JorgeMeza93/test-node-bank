@@ -8,6 +8,9 @@ const Header = () => {
                 <img src='logo.png' className='block mx-auto w-full'/>
             </a>
             <input type='search' placeholder='Search' className='rounded-lg lg:w-80 p-2 border block h-14' />
+            <div>
+                <button className='text-white text-sm bg-sky-600 p-3 rounded-md uppercase font-bold'>Log Out</button>
+            </div>
         </div>
 
     </header>
