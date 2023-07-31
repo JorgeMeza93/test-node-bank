@@ -6,7 +6,7 @@ import axios from 'axios';
 import useAuth from '../Hooks/useAuth';
 
 const Login = () => {
-
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [alerta, setAlerta] = useState({});
@@ -22,8 +22,9 @@ const Login = () => {
     try {
       const { data } = await axios.post("http://localhost:4000/api/users/login", { email, password})
       setAlerta("{}")
-      localStorage.setItem("data", data.token);
+      await localStorage.setItem("data", data.token);
       setAuth(data);
+      navigate(0)
     } catch (error) {
         console.log(error);
         setAlerta({
